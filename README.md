@@ -3,6 +3,7 @@ This repository contains a complete data curation and filtering pipeline for pre
 ----
 
 ## 🚀 Overview
+
 This project develops and integrates multiple stages of data preparation:
 
 ✅ Dataset Curation: Selectively extracted 5 large reasoning-focused datasets (600K+ entries) from Hugging Face.
@@ -17,9 +18,9 @@ This project develops and integrates multiple stages of data preparation:
 
 ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
-----
 
 ## 📊 Datasets Used
+
 -MetaMathQA: meta-math/MetaMathQA
 
 -CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
