@@ -30,7 +30,7 @@ All datasets were filtered for reasoning tasks only, excluding factual Q&A to re
 - Reducing math dataset size from 395K to 50K, eliminating over 87% redundant entries 
 
 ## 🧾 Rule-Based Filtering
-- File: RuleBasedFilter
+- File: RuleBasedFilter.py
 - Implemented rule-based quality heuristics to filter noisy or low-value data using:
   - Word entropy
   - Unique word fraction
