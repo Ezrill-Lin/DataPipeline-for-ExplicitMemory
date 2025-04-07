@@ -1,5 +1,6 @@
 # Reasoning Data Pipeline for Supervised Fine-Tuning of LLMs
 This repository contains a complete data curation and filtering pipeline for preparing high-quality datasets for Supervised Fine-Tuning (SFT) of Large Language Models (LLMs), with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
+
 ----
 
 ## 🚀 Overview
@@ -18,7 +19,7 @@ This project develops and integrates multiple stages of data preparation:
 
 ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
-
+----
 
 ## 📊 Datasets Used
 
@@ -33,4 +34,5 @@ This project develops and integrates multiple stages of data preparation:
 -Code18k: iamtarun/python_code_instructions_18k_alpaca
 
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
+
 ----
