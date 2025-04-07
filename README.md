@@ -16,12 +16,13 @@ This project develops and integrates multiple stages of data preparation:
 
 
 ## 📊 Datasets Used
+All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
 - MetaMathQA: meta-math/MetaMathQA
 - CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
 - Capybara: LDJnr/Capybara
 - OpenMath: open-r1/OpenR1-Math-220k
 - Code18k: iamtarun/python_code_instructions_18k_alpaca  
-All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
+
 
 ## 🧹 MinHash Deduplication
 - File: MinHashDeduplication.py
