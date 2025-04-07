@@ -23,15 +23,15 @@ This project develops and integrates multiple stages of data preparation:
 
 ## 📊 Datasets Used
 
--MetaMathQA: meta-math/MetaMathQA
+- MetaMathQA: meta-math/MetaMathQA
 
--CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
+- CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
 
--Capybara: LDJnr/Capybara
+- Capybara: LDJnr/Capybara
 
--OpenMath: open-r1/OpenR1-Math-220k
+- OpenMath: open-r1/OpenR1-Math-220k
 
--Code18k: iamtarun/python_code_instructions_18k_alpaca
+- Code18k: iamtarun/python_code_instructions_18k_alpaca
 
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
 
