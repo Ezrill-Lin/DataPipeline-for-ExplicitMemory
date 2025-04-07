@@ -9,3 +9,5 @@
 api_key.txt
 /cleaned_datasets
 /jsonl
+/all_data
+/labelled_data_(filtered)
