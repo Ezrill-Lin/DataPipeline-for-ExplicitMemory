@@ -1,7 +1,7 @@
 # Reasoning Data Pipeline for Supervised Fine-Tuning of LLMs
 This repository contains a complete data curation and filtering pipeline for preparing high-quality datasets for Supervised Fine-Tuning (SFT) of Large Language Models (LLMs), with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
 
-🚀 Overview
+## 🚀 Overview
 This project develops and integrates multiple stages of data preparation:
 
 ✅ Dataset Curation: Selectively extracted 5 large reasoning-focused datasets (600K+ entries) from Hugging Face.
@@ -16,7 +16,7 @@ This project develops and integrates multiple stages of data preparation:
 
 ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
-📊 Datasets Used
+## 📊 Datasets Used
 -MetaMathQA: meta-math/MetaMathQA
 
 -CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
