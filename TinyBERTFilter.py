@@ -56,7 +56,10 @@ class TinyBERTFilter():
                 filtered_data.append(line)
 
         filtered_data = Dataset.from_list(filtered_data)
-        filtered_data.save_to_disk('labelled_data_(filtered)')
+        if self.trial:
+            filtered_data.save_to_disk('./datasets/labelled_data_filtered_(trial)')
+        else:
+            filtered_data.save_to_disk('./datasets/labelled_data_filtered')
 
 
 
@@ -65,4 +68,5 @@ if __name__ == '__main__':
                                   data_to_label='./jsonl/all_data_to_bert.jsonl',
                                   trial=True)
     fitler_trial.start_label()
+    fitler_trial.save_labelled_data()
     print(Dataset.from_list(fitler_trial.labelled_data))
