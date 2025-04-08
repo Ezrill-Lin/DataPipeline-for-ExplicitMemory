@@ -44,7 +44,7 @@ All datasets were filtered for reasoning tasks only, excluding factual Q&A to re
 
 
 ## 🤖 TinyBERT Quality Classifier
-- File: TinyBERT_SFT.ipynb, TinyBERT_Filter.ipynb
+- File: TinyBERT_SFT.ipynb, TinyBERT_Filter.py
 - Scores binarized into good (4–5) vs bad (0–3)
 - Fine-tuned huawei-noah/TinyBERT_General_4L_312D using Hugging Face Trainer
 - Achieved robust performance and deployed on full corpus
