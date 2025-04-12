@@ -18,6 +18,9 @@ raw_datasets = {
 class Pipeline():
     def __init__(self, raw_datasets, samp=False):
         '''
+        raw_datasets (dict): Containing the names of used datasets in the project as columns.
+                                the values of the dict is a list containing other dataset-specific 
+                                informations needed by the pipeline.
         samp (bool): Default is False. 
                     If True, only the first 2000 pieces of data entries will be combined.
         '''
