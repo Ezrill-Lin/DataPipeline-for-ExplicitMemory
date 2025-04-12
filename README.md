@@ -31,6 +31,7 @@ Then, you can directly see the pipeline working on a sample with only 10,000 ent
 python execute_pipeline.py
 ```
 After execution, the pipeline will automatically create a new sft dataset and save it in a JSON file `sftdata.json`.
+
 Notice: the execution of the pipeline depends on a definition of the following dataset information:
 ```
 raw_datasets = {
