@@ -22,10 +22,15 @@ All datasets were filtered for reasoning tasks only, excluding factual Q&A to re
 
 
 ## 💻 Usage
-You can directly see the pipeline working by running the following file:
+First, install the dependencies:
+```
+pip install -r requirements.txt
+```
+Then, you can directly see the pipeline working on a sample with only 10,000 entries of data loaded and processed by running the following file:
 ```
 python execute_pipeline.py
 ```
+After execution, the pipeline will automatically create a new sft dataset and save it in a JSON file `sftdata.json`.
 Notice: the execution of the pipeline depends on a definition of the following dataset information:
 ```
 raw_datasets = {
