@@ -228,7 +228,7 @@ class Pipeline():
         indices = filtered_data['index']
         ds_filtered = ds_origin.select(indices)
 
-        _ = self.sharegpt_format(self, ds_filtered)
+        _ = self.sharegpt_format(ds_filtered)
 
 
 if __name__ == "__main__":
