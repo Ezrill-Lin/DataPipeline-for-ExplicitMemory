@@ -12,7 +12,16 @@ This project develops and integrates multiple stages of data preparation:
 - ✅ Binary Classification: Fine-tuned a TinyBERT model to predict LLM-style quality scores (good/bad).
 - ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
-## 🔧 Usage
+## 📊 Datasets Used
+All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
+- MetaMathQA: `meta-math/MetaMathQA`
+- CodeIO: `hkust-nlp/CodeIO-PyEdu-Reasoning`
+- Capybara: `LDJnr/Capybara`
+- OpenMath: `open-r1/OpenR1-Math-220k`
+- Code18k: `iamtarun/python_code_instructions_18k_alpaca`
+
+
+## 💻 Usage
 You can directly see the pipeline working by running the following file
 ```
 python execute_pipeline.py
@@ -29,18 +38,9 @@ raw_datasets = {
 ```
 For more details, please go through the `excute_pipeline.py` file.
 
-The final version of supervised fine-tuning data used for ExplicitMemory project is: `sftdata.json`
+The final version of the supervised fine-tuning data used for ExplicitMemory project is: `sftdata.json`
 
-## Sections of Pipeline
-
-### Datasets Used
-All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
-- MetaMathQA: `meta-math/MetaMathQA`
-- CodeIO: `hkust-nlp/CodeIO-PyEdu-Reasoning`
-- Capybara: `LDJnr/Capybara`
-- OpenMath: `open-r1/OpenR1-Math-220k`
-- Code18k: `iamtarun/python_code_instructions_18k_alpaca` 
-
+## 📁 Section Intro of the Pipeline
 
 ### MinHash Deduplication
 - File: `MinHashDeduplication.py`
