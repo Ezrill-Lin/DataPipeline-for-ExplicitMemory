@@ -3,8 +3,24 @@ This repository contains a complete data curation and filtering pipeline for pre
 
 **The final version of supervised fine-tuning data used for ExplicitMemory project is: sftdata.json**
 
+## 🚀 Usage
+You can directly see the pipeline working by running the following file
+'''
+python execute_pipeline.py
+'''
+Notice: the execution of the pipeline depends on a definition of the following dataset information:
+'''
+raw_datasets = {
+        "meta-math/MetaMathQA": ['train', 'query', None, False],
+        "LDJnr/Capybara": ['train', 'conversation', 'conversation', False],
+        "iamtarun/python_code_instructions_18k_alpaca": ['train', 'instruction', None, False],
+        "open-r1/OpenR1-Math-220k": ['train', 'problem', None, False],
+        "hkust-nlp/CodeIO-PyEdu-Reasoning": ['train', 'prompt', None, True],
+    }
+'''
+For more details, please go through the 'excute_pipeline.py' file.
 
-## 🚀 Overview
+## Overview
 
 This project develops and integrates multiple stages of data preparation:
 
@@ -17,7 +33,7 @@ This project develops and integrates multiple stages of data preparation:
 
 
 
-## 📊 Datasets Used
+## Datasets Used
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
 - MetaMathQA: meta-math/MetaMathQA
 - CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
@@ -26,26 +42,26 @@ All datasets were filtered for reasoning tasks only, excluding factual Q&A to re
 - Code18k: iamtarun/python_code_instructions_18k_alpaca  
 
 
-## 🧹 MinHash Deduplication
+## MinHash Deduplication
 - File: MinHashDeduplication.py
 - Eliminate near-duplicate entries across large-scale reasoning datasets.
 - Reducing math dataset size from 395K to 50K, eliminating over 87% redundant entries 
 
-## 🧾 Rule-Based Filtering
+## Rule-Based Filtering
 - File: RuleBasedFilter.py
 - Implemented rule-based quality heuristics to filter noisy or low-value data using:
   - Word entropy
   - Unique word fraction
   - Non-alphabetic character ratio
 
-## 🧪 Scoring with GPT-4o
+## Scoring with GPT-4o
 - File: GPT4oLabelling.ipynb
 - Sampled 10K entries from filtered datasets
 - Used GPT-4o to rate each entry on a 0–5 scale based on informativeness
 - Engineered prompts to elicit consistent evaluations across task types
 
 
-## 🤖 TinyBERT Quality Classifier
+## TinyBERT Quality Classifier
 - File: TinyBERT_SFT.ipynb, TinyBERT_Filter.py
 - Scores binarized into good (4–5) vs bad (0–3)
 - Fine-tuned huawei-noah/TinyBERT_General_4L_312D using Hugging Face Trainer
