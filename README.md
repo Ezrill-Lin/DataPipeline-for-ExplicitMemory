@@ -22,7 +22,7 @@ All datasets were filtered for reasoning tasks only, excluding factual Q&A to re
 
 
 ## 💻 Usage
-You can directly see the pipeline working by running the following file
+You can directly see the pipeline working by running the following file:
 ```
 python execute_pipeline.py
 ```
