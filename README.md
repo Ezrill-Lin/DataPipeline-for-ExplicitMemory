@@ -37,34 +37,34 @@ This project develops and integrates multiple stages of data preparation:
 
 ## Datasets Used
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
-- MetaMathQA: meta-math/MetaMathQA
-- CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
-- Capybara: LDJnr/Capybara
-- OpenMath: open-r1/OpenR1-Math-220k
-- Code18k: iamtarun/python_code_instructions_18k_alpaca  
+- MetaMathQA: `meta-math/MetaMathQA`
+- CodeIO: `hkust-nlp/CodeIO-PyEdu-Reasoning`
+- Capybara: `LDJnr/Capybara`
+- OpenMath: `open-r1/OpenR1-Math-220k`
+- Code18k: `iamtarun/python_code_instructions_18k_alpaca` 
 
 
 ## MinHash Deduplication
-- File: MinHashDeduplication.py
+- File: `MinHashDeduplication.py`
 - Eliminate near-duplicate entries across large-scale reasoning datasets.
 - Reducing math dataset size from 395K to 50K, eliminating over 87% redundant entries 
 
 ## Rule-Based Filtering
-- File: RuleBasedFilter.py
+- File: `RuleBasedFilter.py`
 - Implemented rule-based quality heuristics to filter noisy or low-value data using:
   - Word entropy
   - Unique word fraction
   - Non-alphabetic character ratio
 
 ## Scoring with GPT-4o
-- File: GPT4oLabelling.ipynb
+- File: `/ipynb/GPT4oLabelling.ipynb`
 - Sampled 10K entries from filtered datasets
 - Used GPT-4o to rate each entry on a 0–5 scale based on informativeness
 - Engineered prompts to elicit consistent evaluations across task types
 
 
 ## TinyBERT Quality Classifier
-- File: TinyBERT_SFT.ipynb, TinyBERT_Filter.py
+- File: `/ipynb/TinyBERT_SFT.ipynb`, `TinyBERT_Filter.py`
 - Scores binarized into good (4–5) vs bad (0–3)
 - Fine-tuned huawei-noah/TinyBERT_General_4L_312D using Hugging Face Trainer
 - Achieved robust performance and deployed on full corpus
