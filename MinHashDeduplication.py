@@ -2,6 +2,7 @@ from datasketch import MinHash, MinHashLSH
 import string
 from datasets import load_dataset
 from typing import List, Dict, Any
+from tqdm import tqdm
 
 class Deduplicate():
     def __init__(self, dataset, based_on: str, threshold: float=0.8, num_perm: int=128) -> None:
@@ -40,7 +41,9 @@ class Deduplicate():
         lsh = MinHashLSH(threshold=self.threshold, num_perm=self.num_perm)
 
         minhashes = {}
-        for i, sample in enumerate(self.dataset):
+        for i, sample in tqdm(enumerate(self.dataset), 
+                              total=len(self.dataset),
+                              desc='Minhashing'):
             # some dataset may contain lists of dictionaries in sub-categories
             try: 
                 text = sample[self.based_on]
@@ -54,7 +57,9 @@ class Deduplicate():
 
         # Find duplicates
         duplicates = set()
-        for i, sample in enumerate(self.dataset):
+        for i, sample in tqdm(enumerate(self.dataset), 
+                              total=len(self.dataset),
+                              desc="Deduplicating"):
             key = str(i)
             if key in duplicates:
                 continue

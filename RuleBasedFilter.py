@@ -5,6 +5,7 @@ from collections import Counter
 from scipy.stats import entropy
 from typing import Optional
 from typing import List, Dict, Any 
+from tqdm import tqdm
 
 class RuleBasedFilter():
     def __init__(self, dataset: List[Dict[str, Any]], 
@@ -57,7 +58,7 @@ class RuleBasedFilter():
         """Applies rule-based filtering and returns a filtered dataset."""
         filtered_data = []
         
-        for sample in self.dataset:
+        for sample in tqdm(self.dataset, desc='Rule-based filtering', total=len(self.dataset)):
             if not self.based_on:
                 try: text = " ".join(sample.values())  # filter applied to the whole document 
                 except: # in case where sample.values() has non-string objects
