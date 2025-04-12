@@ -51,7 +51,7 @@ raw_datasets = {
 ```
 For more details, please go through the `excute_pipeline.py` file.
 
-If you want to adopt the pipeline to other datasets, you need to manually modify the `raw_datasets` dict.
+If you want to adopt the pipeline to other datasets, you need to manually modify the `raw_datasets` dict in `execute_pipeline.py`.
 
 
 
