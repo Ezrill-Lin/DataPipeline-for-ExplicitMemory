@@ -12,6 +12,7 @@ This project develops and integrates multiple stages of data preparation:
 - ✅ Binary Classification: Fine-tuned a TinyBERT model to predict LLM-style quality scores (good/bad).
 - ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
+
 ## 📊 Datasets Used
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
 - MetaMathQA: `meta-math/MetaMathQA`
@@ -32,7 +33,13 @@ python execute_pipeline.py
 ```
 After execution, the pipeline will automatically create a new sft dataset and save it in a JSON file `sftdata.json`.
 
-Notice: the execution of the pipeline depends on a definition of the following dataset information:
+The final version of the supervised fine-tuning data used for Explicit Memory project is: `sftdata.json`
+
+
+
+## 📌 Notice 
+Currently, the pipeline is curated exclusively for the Explicit Memory project. It can not be extended to arbitrary datasets other than those listed above.
+The reason for that is that the execution of the pipeline depends on a definition of the following dict which stores dataset-specific information:
 ```
 raw_datasets = {
         "meta-math/MetaMathQA": ['train', 'query', None, False],
@@ -44,7 +51,9 @@ raw_datasets = {
 ```
 For more details, please go through the `excute_pipeline.py` file.
 
-The final version of the supervised fine-tuning data used for ExplicitMemory project is: `sftdata.json`
+If you want to adopt the pipeline to other datasets, you need to manually modify the `raw_datasets` dict.
+
+
 
 ## 📁 Section Intro of the Pipeline
 
