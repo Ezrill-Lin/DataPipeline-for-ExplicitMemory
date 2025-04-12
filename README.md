@@ -1,10 +1,7 @@
-# Reasoning Data Pipeline for Supervised Fine-Tuning of LLMs
-This repository contains a complete data curation and filtering pipeline for preparing high-quality datasets for Supervised Fine-Tuning (SFT) of Large Language Models (LLMs), with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
+# Reasoning Enhancing Data Pipeline for Explicit Memory
+This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
 
-**The final version of supervised fine-tuning data used for ExplicitMemory project is: sftdata.json**
-
-
-## 🚀 Overview
+## 📝 Overview
 
 This project develops and integrates multiple stages of data preparation:
 
@@ -15,38 +12,57 @@ This project develops and integrates multiple stages of data preparation:
 - ✅ Binary Classification: Fine-tuned a TinyBERT model to predict LLM-style quality scores (good/bad).
 - ✅ Dataset Filtering: Used the TinyBERT classifier to clean 226K examples, retaining 129K high-quality entries.
 
-
-
 ## 📊 Datasets Used
 All datasets were filtered for reasoning tasks only, excluding factual Q&A to reduce memorization bias.
-- MetaMathQA: meta-math/MetaMathQA
-- CodeIO: hkust-nlp/CodeIO-PyEdu-Reasoning
-- Capybara: LDJnr/Capybara
-- OpenMath: open-r1/OpenR1-Math-220k
-- Code18k: iamtarun/python_code_instructions_18k_alpaca  
+- MetaMathQA: `meta-math/MetaMathQA`
+- CodeIO: `hkust-nlp/CodeIO-PyEdu-Reasoning`
+- Capybara: `LDJnr/Capybara`
+- OpenMath: `open-r1/OpenR1-Math-220k`
+- Code18k: `iamtarun/python_code_instructions_18k_alpaca`
 
 
-## 🧹 MinHash Deduplication
-- File: MinHashDeduplication.py
+## 💻 Usage
+You can directly see the pipeline working by running the following file:
+```
+python execute_pipeline.py
+```
+Notice: the execution of the pipeline depends on a definition of the following dataset information:
+```
+raw_datasets = {
+        "meta-math/MetaMathQA": ['train', 'query', None, False],
+        "LDJnr/Capybara": ['train', 'conversation', 'conversation', False],
+        "iamtarun/python_code_instructions_18k_alpaca": ['train', 'instruction', None, False],
+        "open-r1/OpenR1-Math-220k": ['train', 'problem', None, False],
+        "hkust-nlp/CodeIO-PyEdu-Reasoning": ['train', 'prompt', None, True],
+    }
+```
+For more details, please go through the `excute_pipeline.py` file.
+
+The final version of the supervised fine-tuning data used for ExplicitMemory project is: `sftdata.json`
+
+## 📁 Section Intro of the Pipeline
+
+### MinHash Deduplication
+- File: `MinHashDeduplication.py`
 - Eliminate near-duplicate entries across large-scale reasoning datasets.
 - Reducing math dataset size from 395K to 50K, eliminating over 87% redundant entries 
 
-## 🧾 Rule-Based Filtering
-- File: RuleBasedFilter.py
+### Rule-Based Filtering
+- File: `RuleBasedFilter.py`
 - Implemented rule-based quality heuristics to filter noisy or low-value data using:
   - Word entropy
   - Unique word fraction
   - Non-alphabetic character ratio
 
-## 🧪 Scoring with GPT-4o
-- File: GPT4oLabelling.ipynb
+### Scoring with GPT-4o
+- File: `/ipynb/GPT4oLabelling.ipynb`
 - Sampled 10K entries from filtered datasets
 - Used GPT-4o to rate each entry on a 0–5 scale based on informativeness
 - Engineered prompts to elicit consistent evaluations across task types
 
 
-## 🤖 TinyBERT Quality Classifier
-- File: TinyBERT_SFT.ipynb, TinyBERT_Filter.py
+## TinyBERT Quality Classifier
+- File: `/ipynb/TinyBERT_SFT.ipynb`, `TinyBERT_Filter.py`
 - Scores binarized into good (4–5) vs bad (0–3)
 - Fine-tuned huawei-noah/TinyBERT_General_4L_312D using Hugging Face Trainer
 - Achieved robust performance and deployed on full corpus
