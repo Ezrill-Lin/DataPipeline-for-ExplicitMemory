@@ -1,5 +1,5 @@
-# Reasoning Data Pipeline for Supervised Fine-Tuning of LLMs
-This repository contains a complete data curation and filtering pipeline for preparing high-quality datasets for Supervised Fine-Tuning (SFT) of Large Language Models (LLMs), with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
+# Reasoning Enhancing Data Pipeline for Explicit Memory
+This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
 
 ## 📝 Overview
 
