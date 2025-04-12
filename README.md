@@ -27,7 +27,7 @@ First, install the dependencies:
 ```
 pip install -r requirements.txt
 ```
-Then, you can directly see the pipeline working on a sample with only 10,000 entries of data loaded and processed by running the following file:
+Then, you can directly see the pipeline working on a sample with only 10,000 entries (instead of 600k) of data loaded and processed by running the following file:
 ```
 python execute_pipeline.py
 ```
