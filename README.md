@@ -77,6 +77,6 @@ If you want to adopt the pipeline to other datasets, you need to manually modify
 ## TinyBERT Quality Classifier
 - File: `/ipynb/TinyBERT_SFT.ipynb`, `TinyBERT_Filter.py`
 - Scores binarized into good (4–5) vs bad (0–3)
-- Fine-tuned huawei-noah/TinyBERT_General_4L_312D using Hugging Face Trainer
+- Fine-tuned `huawei-noah/TinyBERT_General_4L_312D` using Hugging Face Trainer
 - Achieved robust performance and deployed on full corpus
 
