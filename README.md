@@ -1,5 +1,5 @@
 # Reasoning Enhancing Data Pipeline for Explicit Memory
-This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs in ShareGPT form, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
+This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs in ShareGPT format, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
 
 ## 📝 Overview
 
