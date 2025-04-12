@@ -5,11 +5,11 @@ This repository contains a complete data curation and filtering pipeline for pre
 
 ## 🚀 Usage
 You can directly see the pipeline working by running the following file
-'''
+```
 python execute_pipeline.py
-'''
+```
 Notice: the execution of the pipeline depends on a definition of the following dataset information:
-'''
+```
 raw_datasets = {
         "meta-math/MetaMathQA": ['train', 'query', None, False],
         "LDJnr/Capybara": ['train', 'conversation', 'conversation', False],
@@ -17,8 +17,8 @@ raw_datasets = {
         "open-r1/OpenR1-Math-220k": ['train', 'problem', None, False],
         "hkust-nlp/CodeIO-PyEdu-Reasoning": ['train', 'prompt', None, True],
     }
-'''
-For more details, please go through the 'excute_pipeline.py' file.
+```
+For more details, please go through the `excute_pipeline.py` file.
 
 ## Overview
 
