@@ -1,5 +1,5 @@
 # Reasoning Enhancing Data Pipeline for Explicit Memory
-This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs in ShareGPT format, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities.
+This repository contains a complete data curation and filtering pipeline for preparing reasoning-enhancing datasets for Supervised Fine-Tuning (SFT) of Explicit-Memory LLMs in ShareGPT format, with a focus on enhancing logical, mathematical, coding, and linguistic reasoning capabilities. The final version of the supervised fine-tuning data used for Explicit Memory project is: `sftdata.json`.
 
 ## 📝 Overview
 
@@ -32,8 +32,6 @@ Then, you can directly see the pipeline working on a sample with only 10,000 ent
 python execute_pipeline.py
 ```
 After execution, the pipeline will automatically create a new sft dataset and save it in a JSON file `sftdata.json`.
-
-The final version of the supervised fine-tuning data used for Explicit Memory project is: `sftdata.json`
 
 
 
